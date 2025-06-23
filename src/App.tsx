@@ -12,7 +12,6 @@ export default function App() {
     const [code, setCode] = useState("");
     const [loading, setLoading] = useState(false);
     const [copiedToast, setCopiedToast] = useState(false);
-    const [prompt, setPrompt] = useState("");
 
 
 
@@ -29,7 +28,6 @@ export default function App() {
             const jsxOnly = result.match(/```jsx([\s\S]*?)```/)?.[1]?.trim() || result;
 
             setCode(jsxOnly);
-            setPrompt(""); // ✅ Clear the input textarea
         } catch (error) {
             console.error("Generation failed:", error);
             alert("Something went wrong while generating the UI.");
